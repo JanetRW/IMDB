@@ -3,7 +3,7 @@
 // películas.
 // 2. Actualizar el GIT con esta nueva versión de la app
 
-import { Movie } from "./Professional";
+import { Movie } from "./Movie";
 import { Professional } from "./Professional";
 //Datos de la Primera Película//
 
