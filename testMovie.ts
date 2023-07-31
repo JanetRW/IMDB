@@ -11,14 +11,11 @@ let actor1 = new Professional("Ron Perlman",73, 90, 185, false, "American", 0, "
 let actor2 = new Professional("David Bradley", 81, 75, 180, false, "British", 0, "Actor");
 let director1 = new Professional("Guillermo Del Toro", 58, 91, 178, false, "Mexican", 3, "Director");
 let writer1 = new Professional("Gris Grimly", 48, 60, 168, false, "American", 0, "Writer");
-let writer2 = new Professional("Matthew Robbins",78,68,170,true,"American",0,"Writer");
-
 let mymovie = new Movie("Pinocchio", 2022, "American", "Animación");
 
 mymovie.actors.push(actor1, actor2);
 mymovie.director = director1;
 mymovie.writer = writer1;
-mymovie.writer = writer2;
 mymovie.language = "English";
 mymovie.isMCU = false;
 mymovie.mainCharacterName = "Gregory Mann";
@@ -32,14 +29,13 @@ let actress1 = new Professional("Scarlett Johansson",38, 58, 160, false, "Americ
 let actor3 = new Professional("David Harbour", 48, 90, 185, false, "American", 0, "Actor");
 let director2 = new Professional("Cate Shortland", 54, 60, 162, false, "Australian", 0, "Director");
 let writer3 = new Professional("Jac Schaeffer", 44, 65, 172, false, "American", 0, "Writer");
-let writer4 = new Professional("Ned Benson",46,75,179,false,"American",0,"Writer");
+
 
 let mymovie2 = new Movie("Black Widow", 2021, "American", "Ciencia Ficción");
 
 mymovie2.actors.push(actress1, actor3);
 mymovie2.director = director2;
 mymovie2.writer = writer3;
-mymovie2.writer = writer4;
 mymovie2.language = "English";
 mymovie2.isMCU = true;
 mymovie2.mainCharacterName = "Scarlett Johansson";
@@ -53,17 +49,14 @@ mymovie2.mostrarMovies();
 let actress2 = new Professional("Michelle Yeoh",60, 55, 163, false, "Malaysian", 1, "Actress");
 let actor4 = new Professional("Ke Huy Quan", 51, 58, 163, false, "Vietnamese", 1, "Actor");
 let director3 = new Professional("Daniel Kwan", 34, 60, 162, false, "American", 1, "Director");
-let director4 = new Professional("Daniel Scheinert",35,75,176,false,"American",1,"Director");
 let writer5 = new Professional("Daniel Kwan", 34, 60, 162, false, "American", 1, "Writer");
-let writer6 = new Professional("Daniel Scheinert",35,75,176,false,"American",1,"Writer");
+
 
 let mymovie3 = new Movie("Todo a la vez en todas partes", 2022, "American", "Comedia Dramática");
 
 mymovie3.actors.push(actress2, actor4);
 mymovie3.director = director3;
-mymovie3.director = director4;
 mymovie3.writer = writer5;
-mymovie3.writer = writer6;
 mymovie3.language = "English";
 mymovie3.isMCU = false;
 mymovie3.mainCharacterName = "Michelle Yeoh";

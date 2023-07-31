@@ -38,7 +38,7 @@ export class Professional{
 
         public mostrar(): void {
             console.log("--------------------------------------");
-            console.log("Name:", this.name);
+            console.log("Name:",this.name);
             console.log("Age:", this.age);
             console.log("Weight:", this.weight);
             console.log("Height:", this.height);

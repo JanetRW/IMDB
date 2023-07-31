@@ -15,11 +15,11 @@
 // - genre: string
 // 2. Los únicos parámetros del constructor son: title, releaseYear, nacionality y genre
 // 3. Crear un método PUBLICO que muestre todos los datos de las peliculas
-import { Professional } from "./professional";
+import { Professional } from "./Professional";
 export class Movie{
     public title: string;
     public releaseYear: number;
-    public actors: Professional[];
+    public actors: Professional[]=[];
     public nacionality: string;
     public director: Professional;
     public writer: Professional;
@@ -37,28 +37,28 @@ export class Movie{
         this.nacionality = nacionality;
         this.genre = genre;
         this.actors = [];
-        //this.director = {} as Professional;//
-        this.director = new Professional("", 0, 0, 0, false, "", 0, "");
-        //this.writer = {} as Professional;//
-        this.writer = new Professional("", 0, 0, 0, false, "", 0, "");
+        this.director = new Professional("Guillermo Del Toro", 58, 91, 178, false, "Mexican", 3, "Director");
+        this.writer = new Professional("Gris Grimly", 48, 60, 168, false, "American", 0, "Writer");
         this.language = "";
         this.plataforma = "";
-        this.isMCU = false;
-        this.mainCharacterName = "";
-        this.producer = "";
-        this.distributor = "";
+         this.isMCU = false;
+         this.mainCharacterName = "";
+         this.producer = "";
+         this.distributor = "";
     }
         public mostrarMovies():void{
             console.log("---------------------------------------")
-            console.log("Title:", this.title);
+            console.log(`Title: ${this.title}`);
             console.log("Release Year:", this.releaseYear);
             console.log("Actors:");
             this.actors.forEach((actor) => {
-              console.log("  -", actor.name, "(Profession:", actor.profession, ")");
-            });
+                      console.log("-->"); actor.mostrar();
+                      });
             console.log("Nacionality:", this.nacionality);
-            console.log("Director:", this.director.name, "(Profession:", this.director.profession, ")");
-            console.log("Writer:", this.writer.name, "(Profession:", this.writer.profession, ")");
+            console.log("Director:");
+             this.director.mostrar();
+            console.log("Writer:");
+             this.writer.mostrar();
             console.log("Language:", this.language);
             console.log("Plataforma:", this.plataforma);
             console.log("Is MCU:", this.isMCU);
