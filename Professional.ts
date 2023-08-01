@@ -36,16 +36,17 @@ export class Professional{
             this.profession=profession;
         }
 
-        public mostrar(): void {
-            console.log("--------------------------------------");
-            console.log("Name:",this.name);
-            console.log("Age:", this.age);
-            console.log("Weight:", this.weight);
-            console.log("Height:", this.height);
-            console.log("Is Retired:", this.isRetired);
-            console.log("Nationality:", this.nationality);
-            console.log("Oscars Number:", this.oscarsNumber);
-            console.log("Profession:", this.profession);
-            console.log("--------------------------------------");
+        public mostrar():string {
+            
+            return `
+            Name:${this.name},
+            Age: ${this.age},
+            Weight: ${this.weight},
+            Height: ${this.height},
+            Is Retired: ${this.isRetired},
+            Nationality: ${this.nationality},
+            Oscars Number: ${this.oscarsNumber},
+            Profession: ${this.profession}`
+            
           }
 }

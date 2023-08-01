@@ -41,30 +41,32 @@ export class Movie{
         this.writer = new Professional("Gris Grimly", 48, 60, 168, false, "American", 0, "Writer");
         this.language = "";
         this.plataforma = "";
-         this.isMCU = false;
-         this.mainCharacterName = "";
-         this.producer = "";
-         this.distributor = "";
+        this.isMCU = false;
+        this.mainCharacterName = "";
+        this.producer = "";
+        this.distributor = "";
     }
-        public mostrarMovies():void{
-            console.log("---------------------------------------")
-            console.log(`Title: ${this.title}`);
-            console.log("Release Year:", this.releaseYear);
-            console.log("Actors:");
-            this.actors.forEach((actor) => {
-                      console.log("-->"); actor.mostrar();
-                      });
-            console.log("Nacionality:", this.nacionality);
-            console.log("Director:");
-             this.director.mostrar();
-            console.log("Writer:");
-             this.writer.mostrar();
-            console.log("Language:", this.language);
-            console.log("Plataforma:", this.plataforma);
-            console.log("Is MCU:", this.isMCU);
-            console.log("Main Character Name:", this.mainCharacterName);
-            console.log("Producer:", this.producer);
-            console.log("Distributor:", this.distributor);
-            console.log("Genre:", this.genre);
+        public mostrarMovies():string{
+            let listActors = "";
+            this.actors.forEach(actor => {
+                listActors  += `--> ${actor.mostrar()}\n`;
+            });
+            return `----------------------------------------------
+              Title: ${this.title},
+              Release Year: ${this.releaseYear},
+              Actors:${listActors},
+              Nacionality: ${this.nacionality},
+              Director: ${this.director.mostrar()},
+              Writer:${this.writer.mostrar()},
+              Language: ${this.language},
+              Plataforma: ${this.plataforma},
+              Is MCU: ${this.isMCU},
+              Main Character Name: ${this.mainCharacterName},
+              Producer: ${this.producer},
+              Distributor: ${this.distributor},
+              Genre: ${this.genre}`
           }
+        //   public agregarActor(actor: Professional): void {
+        //     this.actors.push(actor);
+        // }
         }

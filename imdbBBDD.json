@@ -75,6 +75,16 @@
           "nationality": "American",
           "oscarsNumber": 0,
           "profession": "Actor"
+        },
+        {
+          "name": "Emily Jones",
+          "age": 21,
+          "weight": 60,
+          "height": 165,
+          "isRetired": false,
+          "nationality": "british",
+          "oscarsNumber": 0,
+          "profession": "actress"
         }
       ],
       "title": "Black Widow",
@@ -129,6 +139,26 @@
           "nationality": "Vietnamese",
           "oscarsNumber": 1,
           "profession": "Actor"
+        },
+        {
+          "name": "Troy Kutsur",
+          "age": 58,
+          "weight": 80,
+          "height": 190,
+          "isRetired": false,
+          "nationality": "American",
+          "oscarsNumber": 0,
+          "profession": "actor"
+        },
+        {
+          "name": "Mabel",
+          "age": 23,
+          "weight": 68,
+          "height": 172,
+          "isRetired": false,
+          "nationality": "Spain",
+          "oscarsNumber": 0,
+          "profession": "actress"
         }
       ],
       "title": "Todo a la vez en todas partes",

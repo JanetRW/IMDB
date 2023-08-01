@@ -1,8 +1,7 @@
 import { Imdb } from "./Imdb";
 import { Movie } from "./Movie";
 import { Professional } from "./Professional";
-//import  fs from "fs";
-import * as fs from 'node:fs';
+
 //import { readFileSync, writeFileSync } from "fs";
 //console.log(imdb.peliculas);
 //////// Crear instancias de la clase Professional
@@ -13,7 +12,8 @@ let writer1 = new Professional("Gris Grimly", 48, 60, 168, false, "American", 0,
 
 // Crear instancias de la clase Movie para representar diferentes películas
 let mymovie = new Movie("Pinocchio", 2022, "American", "Animación");
-mymovie.actors.push(actor1, actor2);
+mymovie.actors=[actor1, actor2];
+//mymovie.actors.push(actor1, actor2);
 mymovie.director = director1;
 mymovie.writer = writer1;
 mymovie.language = "English";
@@ -23,7 +23,7 @@ mymovie.producer = "Alexander Bulkley";
 mymovie.distributor = "TriPictures";
 mymovie.plataforma = "Netflix";
 
-// ... Crear más instancias de la clase Movie para representar otras películas
+
 //Datos de la Segunda Película//
 let actress1 = new Professional("Scarlett Johansson",38, 58, 160, false, "American", 0, "Actress");
 let actor3 = new Professional("David Harbour", 48, 90, 185, false, "American", 0, "Actor");
@@ -32,8 +32,8 @@ let writer3 = new Professional("Jac Schaeffer", 44, 65, 172, false, "American", 
 
 
 let mymovie2 = new Movie("Black Widow", 2021, "American", "Ciencia Ficción");
-
-mymovie2.actors.push(actress1, actor3);
+mymovie2.actors=[actress1,actor3];
+//mymovie2.actors.push(actress1, actor3);
 mymovie2.director = director2;
 mymovie2.writer = writer3;
 mymovie2.language = "English";
@@ -54,7 +54,8 @@ let writer5 = new Professional("Daniel Kwan", 34, 60, 162, false, "American", 1,
 
 let mymovie3 = new Movie("Todo a la vez en todas partes", 2022, "American", "Comedia Dramática");
 
-mymovie3.actors.push(actress2, actor4);
+// mymovie3.actors.push(actress2, actor4);
+mymovie3.actors=[actress2,actor4];
 mymovie3.director = director3;
 mymovie3.writer = writer5;
 mymovie3.language = "English";
@@ -64,7 +65,8 @@ mymovie3.producer = "Anthony y Joe Russo";
 mymovie3.distributor = "YouPlanet Pictures";
 mymovie3.plataforma = "Movistar+";
 
-///mymovie3.mostrarMovies();
+//mymovie3.mostrarMovies();
+
 // Crear un array con todas las instancias de películas creadas
 let peliculas: Movie[] = [mymovie,mymovie2,mymovie3];
 
@@ -74,39 +76,8 @@ let imdb = new Imdb(peliculas);
 
 
 // // Mostrar los detalles de las películas almacenadas en el objeto Imdb utilizando el método mostrarMovies()
-//   imdb.peliculas.forEach((pelicula, index) => {
-//     console.log(`Detalles de la Película ${index + 1}`);
-//     pelicula.mostrarMovies();
-//   });
+  imdb.peliculas.forEach((pelicula, index) => {
+     console.log(`Detalles de la Película ${index + 1},\n${pelicula.mostrarMovies()}`);
+     
+   });
 
-//////////////////////////// Paso 6: Lectura/Escritura en Fichero
-// 3. Actualizar el GIT con una nueva versión de la app
-
-
-// 1. Convertir a un string el objeto Imdb.
-// - PISTA: JSON.stringify()
-let imdbaString = JSON.stringify(imdb, null, 2); // El segundo argumento (null) y el tercero (2) son para dar formato legible al JSON.
-
-// 2. Guardar dicho objeto en un fichero JSON con el nombre “imdbBBDD.json”.
-// - PISTA: fs.writeFileSync(file, data[, options])
-let nombreArchivoJson  = "imdbBBDD.json";
-fs.writeFileSync(nombreArchivoJson, imdbaString);
-//fs.writeFileSync("imdbBBDD.json", imdbaString);
-
-// 4. Leer el fichero “imdbBBDD.json” y almacenarlo en una instancia de la clase Imdb
-// - PISTA: fs.readFileSync(path[, options])
-// - PISTA: JSON.parse()
-let data = fs.readFileSync(nombreArchivoJson, "utf-8");
-let imdbFromJson:Imdb = JSON.parse(data);
-
-
-// Crear una nueva instancia de la clase Movie para cada objeto almacenado en imdbFromJson.peliculas
-
-
-
- imdbFromJson.peliculas.forEach((pelicula:Movie, index:number) => {
-    console.log(`Detalles de la Película ${index + 1}`);
-    pelicula.mostrarMovies();
-  });
-
-  console.log(imdbFromJson.peliculas);
